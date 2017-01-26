@@ -1,23 +1,33 @@
 class Board {
   constructor(){
     this.positions = ["NO", "YES"]
-    this.stuffToShow = ["images/octagon-512.png", "images/octagon-512.png", "images/octagon-512.png", "images/octagon-512.png","images/octagon-512.png"] // each is an image object???
+    this.stuffToShow = ["images/triangle-outline-512.png", "images/octagon-512.png", "images/circle-outline-512.png", "images/star-8-512.png","images/octagon-outline-512.png","images/square-outline0512.png"] // each is an image object???
   }
 
   pictureCycler(){
     var promise = $.when();
     var self = this;
-    for(let i = 0; i < this.stuffToShow.length; i++){
+    for(let i = 0; i < 10; i++){
       promise = promise.then(function(element){
         if(element){
           $(`#${i-1}`).fadeOut(1)
         }
-        return $('#picture').append(self.renderImg(self.stuffToShow[i], i))
+        // var idea = Math.floor((Math.random() * self.stuffToShow.length) + 1);
+        var idea = self.getRandomNumber();
+
+        return $('#picture').append(self.renderImg(self.stuffToShow[idea], i))
           .delay(2000)
           .promise();
       })
     }
   }
+ getRandomNumber() {
+  //  debugger
+  // var max1 = self.stuffToShow.length
+  var min = Math.ceil(0);
+  var max = Math.floor(5)
+  return Math.floor(Math.random() * (max - min)) + min
+}
 
   // pictureCycler() {
   //   // window.setTimeout(function() {
@@ -30,7 +40,7 @@ class Board {
   // })
 // }
    renderImg(image, index){
-     $("#picture").append(`<div id=${index}><img src=${image}></div>`)
+     $("#picture").append(`<img id=${index} src=${image}></img>`)
    }
 }
 
