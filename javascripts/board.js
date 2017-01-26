@@ -1,16 +1,16 @@
 class Board {
   constructor(){
-    this.positions = ["+", "+"]
+    this.positions = ["NO", "YES"]
+    this.stufftoShow = ["image1", "image2", "image3", "image4","image5"] // each is an image object???
   }
 
-  render(callback){
-    let $board = $('#board')
-    this.positions.forEach((position, i) => {
-      // let square = new Square(position)
-      // $board.append(square.render())
-      $board.append(`<div class="square" id="${i}">${position}</div>`)
-    })
-    callback()
-  }
+
+pictureCycler(){
+  $("#picture").delay(1000).fadeOut(100)
+}
+
+  // render(){
+  //   let $board = $('#board')
+  // }
 
 }

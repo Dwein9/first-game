@@ -5,6 +5,7 @@
     <title>!!!!This Game!!!!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -22,8 +23,13 @@
     </nav>
 
     <div class="container">
-        <div id="board"></div>
-    </div>
+      <div class ="row">
+        <div id="picture" class="col s6 offset-s3"><img src="images/octagon-512.png"></div>
+      </div>
+      <div class ="row">
+        <div id="board" class=""><a class="col s2 offset-s2 square btn red" id="0">NO<i class="material-icons right"> stop </i></a></div>
+        <div id="board" class=""><a class="col s2 offset-s3 square btn" id="1">YES<i class="material-icons right"> done </i></a></div>
+      </div>
 
   </body>
 </html>
