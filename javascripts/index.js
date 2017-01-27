@@ -1,7 +1,7 @@
 
 $(document).ready(()=>{
   $("#startbutton").click(()=>{
-      $("#game").show()
+      $("#gameboard").show()
     let game = new Game()
     game.pictureCycler()
     $("#startbutton").fadeOut()
