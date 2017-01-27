@@ -12,7 +12,7 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src='javascripts/square.js'></script> -->
-  <script type="text/javascript" src='javascripts/board.js'></script>
+  <script type="text/javascript" src='javascripts/game.js'></script>
   <!-- <script type="text/javascript" src='javascripts/ticTacToe.js'></script> -->
   <script type="text/javascript" src='javascripts/index.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
@@ -23,15 +23,18 @@
         <a href="#" class="brand-logo center">Roll Out!!</a>
       </div>
     </nav>
-
-    <div class="container">
+    <!-- Game start screen --->
+    <div id="start" class="row">
+      <div id ="startbutton" class = "col s12 btn center">Click to start</div>
+    </div>
+<!-- game board --->
+    <div id ="game" class="container" style ="display">
       <div class ="row">
-        <div id="picture" class="col s12 center"></div>
+        <div id="picture" class="col s12 center"><!-- Images rolling out ---></div>
       </div>
       <div class ="row">
-        <!-- <div id="board" class=""><a class="col s2 offset-s2 square btn red" id="0">NO<i class="material-icons right"> stop </i></a></div> -->
-        <div id="board" class="col s12 btn" id="1">YES<i class="material-icons right"> done </i></div>
+        <div id="yes" class="col s12 btn" id="1">YES<i class="material-icons right"> done </i></div>
       </div>
-</div>
+  </div>
   </body>
 </html>

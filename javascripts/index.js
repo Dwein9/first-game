@@ -1,4 +1,8 @@
-$(document).ready(function(){
-  let game = new Board()
-  game.pictureCycler()
+
+$(document).ready(()=>{
+  $("#startbutton").click(()=>{
+    let game = new Game()
+    game.pictureCycler()
+    $("#startbutton").fadeOut()
+    })
 })
