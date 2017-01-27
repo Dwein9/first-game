@@ -8,12 +8,11 @@ class Board {
   pictureCycler(){
     var promise = $.when();
     var self = this;
-    for(let i = 0; i < 30; i++){
+    for(let i = 0; i < 100; i++){
       promise = promise.then(function(element){
         if(element){
           $(`#${i-1}`).hide()
         }
-
         // var idea = Math.floor((Math.random() * self.stuffToShow.length) + 1);
         var idea = self.getRandomNumber();
         self.shown.push(self.stuffToShow[idea])
@@ -40,8 +39,8 @@ class Board {
   // })
 // }
    renderImg(image, index){
-     Materialize.toast(`${index}`, 2000)
-     $("#picture").delay(2000).append(`<img id=${index} src=${image}></img>`)
+     Materialize.toast(`${index}`, 900)
+     $("#picture").delay(2500).append(`<img class ="animated rollOut" id=${index} src=${image}></img>`)
 
    }
 }
