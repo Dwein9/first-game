@@ -8,7 +8,7 @@ class Game {
   pictureCycler(){
     var promise = $.when();
     var self = this;
-    for(let i = 0; i < 1000; i++){
+    for(let i = 0; i < 6; i++){
       promise = promise.then(function(element){
         if(element){
           $(`#${i-1}`).hide()
