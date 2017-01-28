@@ -40,8 +40,12 @@ class Game {
         return promise
     }
 
+
+
     getRandomNumber() {
-        return Math.floor(Math.random() * (this.stuffToShow.length) + 0)
+        var min = Math.ceil(0)
+        var max = Math.floor(this.stuffToShow.length)
+        return Math.floor(Math.random() * (max - min)) + min
     }
 
     renderImg(image, index) {
