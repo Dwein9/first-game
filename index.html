@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>!!!!RollOut!!!!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-  <!-- <script type="text/javascript" src='javascripts/square.js'></script> -->
-  <script type="text/javascript" src='javascripts/game.js'></script>
-  <!-- <script type="text/javascript" src='javascripts/ticTacToe.js'></script> -->
-  <script type="text/javascript" src='javascripts/index.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  </head>
-  <body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src='javascripts/square.js'></script> -->
+    <script type="text/javascript" src='javascripts/game.js'></script>
+    <!-- <script type="text/javascript" src='javascripts/ticTacToe.js'></script> -->
+    <script type="text/javascript" src='javascripts/index.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</head>
+
+<body>
     <nav>
-      <div class="nav-wrapper pink">
-        <a href="#" class="brand-logo center">Roll Out!!</a>
-      </div>
+        <div class="nav-wrapper pink">
+            <a href="#" class="brand-logo center">Roll Out!!</a>
+        </div>
     </nav>
     <!-- Game start screen --->
     <div id="start" class="row">
-      <button id ="startbutton" class = "col s12 btn">Click to start, CLICK EACH PICTURE ONCE</button>
-  </div>
-<!-- game board --->
-    <div id ="gameboard" class="container" style ="display:none">
-      <div class ="row">
-        <div id="picture" class="col s12 center"><!-- Images rolling out ---></div>
-      </div>
-      <!-- <div class ="row">
+        <button id="startbutton" class="col s12 btn blue">Click to start, CLICK EACH PICTURE ONCE</button>
+    </div>
+    <!-- game board --->
+    <div id="scores" class="container" style="display:none">
+        <ul>
+
+        </ul>
+        <button id="startbutton2" class="col s12 btn red">??Play Again??</button>
+    </div>
+    <div id="gameboard" class="container" style="display:none">
+        <div class="row">
+            <div id="picture" class="col s12 center">
+                <!-- Images rolling out --->
+            </div>
+        </div>
+        <!-- <div class ="row">
         <div id="yes" class="col s12 btn" id="1">YES<i class="material-icons right"> done </i></div>
       </div> -->
     </div>
-    <div id="scores">
-      <ul class="hi">
+</body>
 
-      </ul>
-    </div>
-  </body>
 </html>

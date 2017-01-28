@@ -5,28 +5,28 @@ class Game {
         this.clicked = []
         this.correct = []
         this.counter = 0
+        this.runs = 11
 
     }
 
     pictureCycler(callback) {
         var promise = $.when();
         var self = this;
-        for (let i = 1; i < 5; i++) {
+        for (let i = 1; i < this.runs; i++) {
             promise = promise.then(function(element) {
                 if (element) {
-                    $(`#${i-1}`).hide()
+                    $(`#${i-1}`).remove()
                 }
                 var idea = self.getRandomNumber();
                 self.shown.push(self.stuffToShow[idea])
 
-                if (self.shown.length > 2)
+                if (self.shown.length > 2) {
 
                     if (self.shown[self.shown.length - 1] === self.shown[self.shown.length - 3]) {
                         self.correct.push(self.shown[self.shown.length - 1])
                     }
 
                 $(`#picture`).one("click", `#${self.shown.length}`, function() {
-                    debugger
                     let j = this.src
                     self.clicked.push(j.split('first-game/').pop())
                     if (self.clicked[self.clicked.length - 1] === self.shown[self.shown.length - 3]) {
@@ -35,7 +35,7 @@ class Game {
                         Materialize.toast(`WRONG -1: ${self.counter-=1}`, 500)
                     }
                 })
-
+              }
                 return $('#picture').append(self.renderImg(self.stuffToShow[idea], i)).promise();
             })
         }
@@ -57,10 +57,11 @@ class Game {
     }
 
     renderScores() {
-      $(".hi").append(`<li> Counter: ${this.counter}</li>`)
-        console.log(this.counter)
-        console.log(this.shown.length)
-        console.log(this.clicked.length)
-        console.log(this.correct.length)
+        $("#scores").show()
+        $("ul").append(`<li> Player Score: ${this.counter}</li>`)
+        $("ul").append(`<li> Number of shapes displayed: ${this.shown.length}</li>`)
+        $("ul").append(`<li> Player Attempts: ${this.clicked.length}</li>`)
+        $("ul").append(`<li> Highest Possible Score: ${this.correct.length}</li>`)
+        $(`img#${this.runs-1}`).remove()
     }
 }
