@@ -23,23 +23,22 @@ class Game {
                 if (self.shown.length > 2) {
 
                   self.trackCorrect()
-
                   $(`#picture`).one("click", `#${self.shown.length}`, function() {
-                      let j = this.src
-                      self.clicked.push(j.split('first-game/').pop())
-                      if (self.clicked[self.clicked.length - 1] === self.shown[self.shown.length - 3]) {
-                          Materialize.toast(`CORRECT +1: ${self.counter+=1}`, 500)
-                      } else {
-                          Materialize.toast(`WRONG -1: ${self.counter-=1}`, 500)
-                      }
-                  })
-                }
+                    self.userClick()
+                //     let j = this.src
+                //     self.clicked.push(j.split('first-game/').pop())
+                //     if (self.clicked[self.clicked.length - 1] === self.shown[self.shown.length - 3]) {
+                //         Materialize.toast(`CORRECT +1: ${self.counter+=1}`, 500)
+                //     } else {
+                //         Materialize.toast(`WRONG -1: ${self.counter-=1}`, 500)
+                //     }
+                // })
+              } ) }
                 return $('#picture').append(self.renderImg(self.stuffToShow[idea], i)).promise();
-              })
-          }
+            })
+        }
         return promise
     }
-
 
 
     getRandomNumber() {
@@ -71,4 +70,24 @@ class Game {
           this.correct.push(this.shown[this.shown.length - 1]) //changes self to this
       }
     }
+
+    userClick(){
+    //   $(`#picture`).one("click", `#${this.shown.length}`, function() {
+          let j = $(`#picture`)[0].lastElementChild.src
+          debugger
+          this.clicked.push(j.split('first-game/').pop())
+          if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
+              Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
+          } else {
+              Materialize.toast(`WRONG -1: ${this.counter-=1}`, 500)
+          }
+      }
+
+
 }
+
+
+// $("#picture").keyup(function (key) {
+//   if (key.which == 83) {
+//     $('#picture').trigger('click') //POSSIBLE WAY TO BIND A KEY TO A CLICK
+//   } } )
