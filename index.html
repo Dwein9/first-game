@@ -9,27 +9,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src='javascripts/square.js'></script> -->
-    <script type="text/javascript" src='javascripts/game.js'></script>
-    <!-- <script type="text/javascript" src='javascripts/ticTacToe.js'></script> -->
     <script type="text/javascript" src='javascripts/index.js'></script>
+    <script type="text/javascript" src='javascripts/intro.js'></script>
+    <script type="text/javascript" src='javascripts/game.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper pink">
-            <a href="#" class="brand-logo center">Roll Out!!</a>
+            <a href="index.html" class="brand-logo center">Roll Out!!</a>
         </div>
     </nav>
+    <!-- Select 1P or 2P  --->
+    <div id="select-game" class="row">
+        <button id="one-player" class="col s12 btn blue" >One Player</button>
+        <button class="col s12 btn blue" id="two-player">Two Player</button>
+    </div>
     <!-- Game start screen --->
-    <div id="start" class="row">
+    <div id="start" class="row" style="display:none">
         <button id="startbutton" class="col s12 btn blue">Click to start, CLICK EACH PICTURE ONCE</button>
     </div>
     <!-- game board --->
-    <div id="scores" class="container" style="display:none">
+    <div id="scores" class="container center" style="display:none">
         <ul>
-
+          <!-- scores --->
         </ul>
         <button id="startbutton2" class="col s12 btn red">??Play Again??</button>
     </div>
