@@ -5,7 +5,7 @@ class Game {
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 6
+        this.runs = 16
 
     }
 
@@ -17,24 +17,16 @@ class Game {
                 if (element) {
                     $(`#${i-1}`).remove()
                 }
-                var idea = self.getRandomNumber();
-                self.shown.push(self.stuffToShow[idea])
+                var randomIndex = self.getRandomNumber();
+                self.shown.push(self.stuffToShow[randomIndex])
 
                 if (self.shown.length > 2) {
-
-                  self.trackCorrect()
-                  $(`#picture`).one("click", `#${self.shown.length}`, function() {
-                    self.userClick()
-                //     let j = this.src
-                //     self.clicked.push(j.split('first-game/').pop())
-                //     if (self.clicked[self.clicked.length - 1] === self.shown[self.shown.length - 3]) {
-                //         Materialize.toast(`CORRECT +1: ${self.counter+=1}`, 500)
-                //     } else {
-                //         Materialize.toast(`WRONG -1: ${self.counter-=1}`, 500)
-                //     }
-                // })
-              } ) }
-                return $('#picture').append(self.renderImg(self.stuffToShow[idea], i)).promise();
+                    self.trackCorrect()
+                    $(`#picture`).one("click", `#${self.shown.length}`, function() {
+                        self.userClick()
+                    })
+                }
+                return $('#picture').append(self.renderImg(self.stuffToShow[randomIndex], i)).promise();
             })
         }
         return promise
@@ -55,8 +47,9 @@ class Game {
 
     renderScores() {
         $("#scores").show()
+        $("#startbutton2").show()
         if (this.counter === this.correct.length) {
-          $("ul").append(`<li> PERFECT SCORE </li>`)
+            $("ul").append(`<li> PERFECT SCORE </li>`)
         }
         $("ul").append(`<li> Player Score: ${this.counter}</li>`)
         $("ul").append(`<li> Number of shapes displayed: ${this.shown.length}</li>`)
@@ -65,29 +58,28 @@ class Game {
         $(`img#${this.runs-1}`).remove()
     }
 
-    trackCorrect(){
-      if (this.shown[this.shown.length - 1] === this.shown[this.shown.length - 3]) {
-          this.correct.push(this.shown[this.shown.length - 1]) //changes self to this
-      }
+    trackCorrect() {
+        if (this.shown[this.shown.length - 1] === this.shown[this.shown.length - 3]) {
+            this.correct.push(this.shown[this.shown.length - 1]) //changes self to this
+        }
     }
 
-    userClick(){
-    //   $(`#picture`).one("click", `#${this.shown.length}`, function() {
-          let j = $(`#picture`)[0].lastElementChild.src
-          debugger
-          this.clicked.push(j.split('first-game/').pop())
-          if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
-              Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
-          } else {
-              Materialize.toast(`WRONG -1: ${this.counter-=1}`, 500)
-          }
-      }
+    userClick() {
+        //   $(`#picture`).one("click", `#${this.shown.length}`, function() {
+        let j = $(`#picture`)[0].lastElementChild.src
+        this.clicked.push(j.split('first-game/').pop())
+        if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
+            Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
+        } else {
+            Materialize.toast(`WRONG -1: ${this.counter-=1}`, 500)
+        }
+    }
 
 
 }
 
 
-// $("#picture").keyup(function (key) {
-//   if (key.which == 83) {
-//     $('#picture').trigger('click') //POSSIBLE WAY TO BIND A KEY TO A CLICK
+// $(`#${self.shown.length}`).keypress(function (key) {
+//   if (key.which === 90) {
+//       self.userClick()
 //   } } )
