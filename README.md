@@ -11,7 +11,7 @@ Built on:
 - Materialize.css
 - JavaScript
 
-
+Implementation of full 2 player capability pending, current 2 player capability limited. 
 
 <!-- Open Items
 
