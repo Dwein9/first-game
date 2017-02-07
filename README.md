@@ -7,9 +7,9 @@ Roll Out is a continuous performance game, based on the N-back that is commonly 
 
 
 Built on:
-Animate.css
-Materialize.css
-JavaScript
+- Animate.css
+- Materialize.css
+- JavaScript
 
 
 
