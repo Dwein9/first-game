@@ -5,7 +5,7 @@ class Game {
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 16
+        this.runs = 4
 
     }
 
@@ -47,7 +47,7 @@ class Game {
 
     renderScores() {
         $("#scores").show()
-        $("#startbutton2").show()
+        $("#play-again").show()
         if (this.counter === this.correct.length) {
             $("ul").append(`<li> PERFECT SCORE </li>`)
         }

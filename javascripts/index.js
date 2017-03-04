@@ -1,14 +1,14 @@
 $(document).ready(() => {
    playerOneSelection()
    playerTwoSelection()
-    $("#startbutton").on("click",startgame)
-      $("#startbutton2").click(() => {
+    $("#startbutton-1P").on("click",startgame)
+      $("#play-again").click(() => {
         $("li").remove()
         $("#scores").hide()
         startgame()
       })
-    $("#2-player-start").on("click",startTwoPlayerGame)
-    $("#startbutton3").click(() => {
+    $("#startbutton-2P").on("click",startTwoPlayerGame)
+    $("#play-again2").click(() => {
           $("li").remove()
           $("#scores").hide()
           startTwoPlayerGame()
@@ -19,7 +19,7 @@ function startTwoPlayerGame() {
     $("#gameboard").show()
       let game = new TwoPlayerGame()
     resetGameBoard(game)
-    $("#2-player-start").fadeOut()
+    $("#2-player-start").remove()
     var renderScores = game.pictureCycler()
     renderScores.then(() => {
         game.renderScores()
@@ -30,7 +30,7 @@ function startgame() {
     $("#gameboard").show()
       let game = new Game()
     resetGameBoard(game)
-    $("#startbutton").fadeOut()
+    $("#1-player-start").remove()
     var renderScores = game.pictureCycler()
     renderScores.then(() => {
         game.renderScores()
@@ -52,17 +52,17 @@ function resetGameBoard(game){
 
 function playerOneSelection() {
   $("#one-player").on('click', function() {
-     $("#start").show()
-   $("#startbutton").show()
+     $("#ready").show()
+   $("#1-player-start").show()
    $("#2-player-start").hide()
    $("#select-game").remove()
 }) }
 
 function playerTwoSelection() {
   $("#two-player").on('click', function() {
-  $("#start").show()
+    $("#ready").show()
   $("#2-player-start").show()
-  $("#startbutton").hide()
+  $("#1-player-start").hide()
   $("#select-game").remove()
 }) }
 

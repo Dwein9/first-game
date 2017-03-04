@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>!!!!RollOut!!!!</title>
+    <title>Roll Out</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -18,40 +18,58 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper pink">
-            <a href="index.html" class="brand-logo center">Roll Out!!</a>
+        <div class="nav-wrapper">
+            <a href="index.html" id="nav-text" class="brand-logo center">Roll Out</a>
         </div>
     </nav>
-    <!-- Select 1P or 2P  --->
-    <div id="select-game" class="row">
-        <button id="one-player" class="col s12 btn blue" >One Player</button>
-        <button id="two-player" class="col s12 btn blue" >Two Player</button>
-    </div>
-    <!-- Game start screen --->
-    <div id="start" class="row" style="display:none">
-        <button id="startbutton" class="col s12 btn blue">Click to start, CLICK EACH PICTURE</button>
-        <button id="2-player-start" class="col s12 btn blue">Click to start, PLAYER1: Z, PLAYER2: /</button>
-    </div>
-    <!-- game board --->
-    <div id="scores" class="container center" style="display:none">
-        <ul>
-          <!-- scores --->
-        </ul>
-        <button id="startbutton2" class="col s12 btn red" style="display:none">??Play Again??</button>
-        <button id="startbutton3" class="col s12 btn red" style="display:none">??Play Again??</button>
-    </div>
-    <div id="gameboard" class="container gameboard" style="display:none">
-        <div class="row">
-            <div id="picture" class="col s12 center">
-              <div id="player1"></div>
-              <div id="player2"></div>
-                <!-- Images rolling out --->
-            </div>
+    <div class="container">
+
+      <div id="select-game" class="center">
+        <h4>Welcome to Roll Out.</h4>
+        <p>A not so simple memory game. Please select the number of players</p>
+      <!-- Select 1P or 2P  --->
+          <button id="one-player" class="button col l6 m8 s12 waves-effect waves-light btn-large" >Single Player</button>
+          <button id="two-player" class="button col l6 m8 s12 waves-effect waves-light btn-large" >Two Players</button>
+      </div>
+      <!-- Game start screen --->
+      <div id="ready" class="center" style="display:none">
+        <div id="1-player-start">
+          <h4>Single Player Game</h4>
+          <p>Click on the picture when the current picture repeats the picture you saw 2 pictures before.</p>
+          <p>Correct clicks are worth 1 point. A point is subtracted on an incorrect click. No points are awarded if a selection is not made.</p>
+          <br>
+          <button id="startbutton-1P" class="button col l6 m8 s12 waves-effect waves-light btn-large">Click to start</button>
         </div>
-        <!-- <div class ="row">
-        <div id="yes" class="col s12 btn" id="1">YES<i class="material-icons right"> done </i></div>
-      </div> -->
+        <div id="2-player-start">
+          <h4>Two Player Game</h4>
+          <p>Click on the picture when the current picture repeats the picture you saw 2 pictures before.</p>
+          <p>Correct clicks are worth 1 point. A point is subtracted on an incorrect click. No points are awarded if a selection is not made.</p>
+          <br>
+          <button id="startbutton-2P" class="button col l6 m8 s12 waves-effect waves-light btn-large">Click to start, PLAYER1: Z, PLAYER2: /</button>
+        </div>
+      </div>
+      <!-- game board --->
+      <div id="scores" class="container center" style="display:none">
+          <ul>
+            <!-- scores --->
+          </ul>
+          <button id="play-again" class="col l6 m8 s12 btn red" style="display:none">Play Again?</button>
+          <button id="play-again2" class="col l6 m8 s12 btn red" style="display:none">Play Again?</button>
+      </div>
+      <div id="gameboard" class="container gameboard" style="display:none">
+          <div class="center">
+            <br>
+              <div id="picture" class="col l6 m8 s12 center">
+                <div id="player1"></div>
+                <div id="player2"></div>
+                  <!-- Images rolling out --->
+              </div>
+          </div>
+          <!-- <div class ="row">
+          <div id="yes" class="col l6 m8 s12 btn" id="1">YES<i class="material-icons right"> done </i></div>
+        </div> -->
+      </div>
     </div>
-</body>
+  </body>
 
 </html>

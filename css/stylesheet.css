@@ -1,6 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Alike+Angular|Diplomata+SC');
+
+
 img {
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
   -ms-animation-delay: 2s;
   -o-animation-delay: 2s;
+}
+
+.nav-wrapper{
+  background-color: #42C0FB;
+  font-family: 'Diplomata SC', cursive;
+  font-weight: 400;
+}
+
+#nav-text:hover{
+  color: #3f51b5;
+}
+
+.button{
+  background-color: #42C0FB;
+}
+
+.button:hover {
+    background-color: #3f51b5;
+}
+
+.container {
+ font-family: "Alike Angular", sans-serif;
+ font-weight: 400;
+ font-stretch: ultra-expanded;
 }
