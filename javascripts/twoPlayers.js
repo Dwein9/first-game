@@ -69,7 +69,7 @@ class TwoPlayerGame {
 
     renderScores() {
         $("#scores").show()
-        $("#startbutton3").show()
+        $("#play-again2").show()
         if (this.counter === this.correct.length) {
           $("ul").append(`<li> PERFECT SCORE </li>`)
         }
