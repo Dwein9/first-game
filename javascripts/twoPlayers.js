@@ -63,7 +63,7 @@ class TwoPlayerGame {
 
     renderImg(image, index) {
         Materialize.toast(`${index}`, 900)
-        $("#picture").delay(2500).append(`<img class ="animated rollOut" id=${index} src=${image}></img>`)
+        $("#picture").delay(2500).append(`<img class ="responsive-img animated rollOut" id=${index} src=${image}></img>`)
 
     }
 

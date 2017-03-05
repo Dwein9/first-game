@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Alike+Angular|Diplomata+SC');
 
+/*#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 5% !important;
+  left: auto;
+}*/
 
 img {
   -webkit-animation-delay: 2s;

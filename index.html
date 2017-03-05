@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Roll Out</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css">
     <link rel="stylesheet" href="css/stylesheet.css">
@@ -22,8 +23,7 @@
             <a href="index.html" id="nav-text" class="brand-logo center">Roll Out</a>
         </div>
     </nav>
-    <div class="container">
-
+    <div class="container-fluid">
       <div id="select-game" class="center">
         <h4>Welcome to Roll Out.</h4>
         <p>A not so simple memory game. Please select the number of players</p>
@@ -51,17 +51,17 @@
         </div>
       </div>
       <!-- game board --->
-      <div id="scores" class="container center" style="display:none">
+      <div id="scores" class="center" style="display:none">
           <ul>
             <!-- scores --->
           </ul>
           <button id="play-again" class="col l6 m8 s12 btn red" style="display:none">Play Again?</button>
           <button id="play-again2" class="col l6 m8 s12 btn red" style="display:none">Play Again?</button>
       </div>
-      <div id="gameboard" class="container gameboard" style="display:none">
+      <div id="gameboard" class="gameboard" style="display:none">
           <div class="center">
             <br>
-              <div id="picture" class="col l6 m8 s12 center">
+              <div id="picture" class="col l6 m8 s6 center">
                 <div id="player1"></div>
                 <div id="player2"></div>
                   <!-- Images rolling out --->
