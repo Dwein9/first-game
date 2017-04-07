@@ -65,10 +65,8 @@ class Game {
     }
 
     userClick() {
-        //   $(`#picture`).one("click", `#${this.shown.length}`, function() {
         let j = $(`#picture`)[0].lastElementChild.src
         this.clicked.push(j.split('first-game/').pop())
-        debugger
         if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
             Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
         } else {
