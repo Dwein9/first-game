@@ -1,11 +1,11 @@
 class Game {
     constructor() {
-        this.stuffToShow = ["images/F.png", "images/A.png"] //, "images/E.png", "images/C.png"]
+        this.stuffToShow = ["images/F.png", "images/A.png", "images/E.png", "images/C.png"]
         this.shown = []
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 6
+        this.runs = 16
 
     }
 
@@ -60,13 +60,14 @@ class Game {
 
     trackCorrect() {
         if (this.shown[this.shown.length - 1] === this.shown[this.shown.length - 3]) {
-            this.correct.push(this.shown[this.shown.length - 1]) //changes self to this
+            this.correct.push(this.shown[this.shown.length - 1])
         }
     }
 
     userClick() {
         let j = $(`#picture`)[0].lastElementChild.src
-        this.clicked.push(j.split('first-game/').pop())
+        this.clicked.push(j.split('rollout/').pop())
+        debugger
         if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
             Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
         } else {
