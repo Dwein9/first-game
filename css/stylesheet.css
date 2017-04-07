@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Alike+Angular|Diplomata+SC');
 
-/*#toast-container {
-  top: auto !important;
-  right: auto !important;
-  bottom: 5% !important;
-  left: auto;
-}*/
-
 img {
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
@@ -32,7 +25,7 @@ img {
     background-color: #3f51b5;
 }
 
-.container {
+.container-fluid {
  font-family: "Alike Angular", sans-serif;
  font-weight: 400;
  font-stretch: ultra-expanded;
