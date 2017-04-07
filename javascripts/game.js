@@ -1,11 +1,11 @@
 class Game {
     constructor() {
-        this.stuffToShow = ["images/F.png", "images/A.png", "images/E.png", "images/C.png"]
+        this.stuffToShow = ["images/F.png", "images/A.png"] //, "images/E.png", "images/C.png"]
         this.shown = []
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 16
+        this.runs = 6
 
     }
 
