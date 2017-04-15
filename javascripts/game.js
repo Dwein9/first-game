@@ -5,11 +5,10 @@ class Game {
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 16
-
+        this.runs = 6
     }
 
-    pictureCycler(callback) {
+    pictureCycler() {
         var promise = $.when();
         var self = this;
         for (let i = 1; i < this.runs; i++) {
@@ -17,15 +16,21 @@ class Game {
                 if (element) {
                     $(`#${i-1}`).remove()
                 }
+
                 var randomIndex = self.getRandomNumber();
                 self.shown.push(self.stuffToShow[randomIndex])
-
                 if (self.shown.length > 2) {
                     self.trackCorrect()
                     $(`#picture`).one("click", `#${self.shown.length}`, function() {
                         self.userClick()
                     })
                 }
+
+                if (self.shown.length === 5 ) {
+                    setTimeout(function(){
+                    self.renderScores()
+                }, 3000)
+              }
                 return $('#picture').append(self.renderImg(self.stuffToShow[randomIndex], i)).promise();
             })
         }
@@ -65,9 +70,8 @@ class Game {
     }
 
     userClick() {
-        let j = $(`#picture`)[0].lastElementChild.src
-        this.clicked.push(j.split('rollout/').pop())
-        debugger
+        let pic = $(`#picture`)[0].lastElementChild.src
+        this.clicked.push(pic.split('rollout/').pop())
         if (this.clicked[this.clicked.length - 1] === this.shown[this.shown.length - 3]) {
             Materialize.toast(`CORRECT +1: ${this.counter+=1}`, 500)
         } else {
