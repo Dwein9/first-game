@@ -27,10 +27,11 @@ class Game {
                 }
 
                 if (self.shown.length === 5 ) {
-                    setTimeout(function(){
+                  setTimeout(function(){
                     self.renderScores()
-                }, 3000)
-              }
+                  }, 3000)
+                }
+                
                 return $('#picture').append(self.renderImg(self.stuffToShow[randomIndex], i)).promise();
             })
         }

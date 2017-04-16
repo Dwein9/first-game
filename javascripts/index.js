@@ -1,37 +1,49 @@
 $(document).ready(() => {
-   OnePlayerSelect()
-
-  playerTwoSelection()
-    $("#startbutton-2P").on("click",startTwoPlayerGame)
-    $("#play-again2").click(() => {
-      $("li").remove()
-      $("#scores").hide()
-      startTwoPlayerGame()
-    })
+   onePlayerSelect()
+   twoPlayerSelect()
 })
 
-// function startTwoPlayerGame() {
-//   $("#gameboard").show()
-//     let game = new TwoPlayerGame()
-//   resetGameBoard(game)
-//   $("#2-player-start").remove()
-//   var renderScores = game.pictureCycler()
-//   renderScores.then(() => {
-//       game.renderScores()
-//   })
-// }
-
-function playerTwoSelection() {
+function twoPlayerSelect() {
   $("#two-player").on('click', function() {
-    $("#ready").show()
-    $("#1-player-start").show()
-    $("#2-player-start").hide()
-    $("#select-game").remove()
+    twoPlayerSelection()
   })
 }
 
+function twoPlayerSelection() {
+  $("#ready").show()
+  $("#1-player-start").hide()
+  $("#2-player-start").show()
+  $("#select-game").remove()
+  startTwoPlayer()
+}
 
-function OnePlayerSelect() {
+function startTwoPlayer() {
+  $("#startbutton-2P").click(() => {
+    startTwoPlayerGame()
+  })
+}
+
+function startTwoPlayerGame() {
+  $("#gameboard").show()
+  $("#2-player-start").hide()
+  let game = new TwoPlayerGame()
+  resetTwoPlayerGame(game)
+  game.pictureCycler()
+  restartTwoPlayerGame()
+  }
+
+function restartTwoPlayerGame() {
+  $("#play-again2").click(() => {
+    $("#gameboard").hide()
+    $("#scores").hide()
+    $("li").remove()
+    $("#ready").show()
+    $("#1-player-start").hide()
+    $("#2-player-start").show()
+  })
+}
+
+function onePlayerSelect() {
   $("#one-player").on('click', function() {
     playerOneSelection()
   })
@@ -42,46 +54,49 @@ function playerOneSelection() {
   $("#1-player-start").show()
   $("#2-player-start").hide()
   $("#select-game").hide()
-  startPlayerOne()
+  startOnePlayer()
 }
 
-function startPlayerOne() {
+function startOnePlayer() {
   $("#startbutton-1P").click(() => {
     startGame()
   })
 }
 
-
 function startGame() {
   $("#gameboard").show()
   $("#1-player-start").hide()
-    let game = new Game()
-    resetGame(game)
-     game.pictureCycler()
-     restartGame()
-   }
+  let game = new Game()
+  resetOnePlayerGame(game)
+  game.pictureCycler()
+  restartGame()
+}
 
+function restartGame() {
+  $("#play-again").click(() => {
+    $("#gameboard").hide()
+    $("#scores").hide()
+    $("li").remove()
+    $("#ready").show()
+    $("#1-player-start").show()
+    $("#2-player-start").hide()
+  })
+}
 
-  function restartGame() {
-    $("#play-again").click(() => {
-      $("#gameboard").hide()
-      $("#scores").hide()
-      $("li").remove()
-      $("#ready").show()
-      $("#1-player-start").show()
-      $("#2-player-start").hide()
-    })
-  }
-
-  function resetGame(game){
+  function resetOnePlayerGame(game){
     if (game.counter) {
        game.counter = 0 }
     game.correct.length = 0
     game.shown.length = 0
-    if (game.clickedPlayerTwo){
-      game.clickedPlayerTwo.length = 0
-      game.clickedPlayerOne.length = 0
-    } else{
-        game.clicked.length = 0
-      }
-    }
+    game.clicked.length = 0
+  }
+
+  function resetTwoPlayerGame(game){
+    this.shown = []
+    this.clickedPlayerOne = []
+    this.clickedPlayerTwo = []
+    this.correctPlayerOne = []
+    this.correctPlayerTwo = []
+    this.counterPlayerOne = 0
+    this.counterPlayerTwo = 0
+  }

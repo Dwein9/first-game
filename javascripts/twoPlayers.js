@@ -9,10 +9,9 @@ class TwoPlayerGame {
         this.counterPlayerOne = 0
         this.counterPlayerTwo = 0
         this.runs = 6
-
     }
 
-    playerOnePictureCycler() {
+    pictureCycler() {
         var promise = $.when();
         var self = this;
         for (let i = 1; i < this.runs; i++) {
@@ -30,6 +29,13 @@ class TwoPlayerGame {
                         self.userClick()
                     })
                 }
+
+                if (self.shown.length === 5 ) {
+                  setTimeout(function(){
+                    self.renderScores()
+                  }, 3000)
+                }
+
                 return $('#picture').append(self.renderImg(self.stuffToShow[randomIndex], i)).promise();
             })
         }
@@ -48,7 +54,7 @@ class TwoPlayerGame {
 
     }
 
-    playerOneRenderScores() {
+    renderScores() {
         $("#scores").show()
         $("#play-again").show()
         if (this.counter === this.correct.length) {
@@ -63,15 +69,10 @@ class TwoPlayerGame {
 
     trackCorrect(){
       if (this.shown[this.shown.length - 1] === this.shown[this.shown.length - 3]) {
-          this.correct.push(this.shown[this.shown.length - 1]) //changes self to this
+          this.correct.push(this.shown[this.shown.length - 1]) 
       }
     }
 
-    trackCorrect() {
-        if (this.shown[this.shown.length - 1] === this.shown[this.shown.length - 3]) {
-            this.correct.push(this.shown[this.shown.length - 1])
-        }
-    }
 
     userClick() {
         let j = $(`#picture`)[0].lastElementChild.src
