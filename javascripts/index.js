@@ -68,7 +68,11 @@ function startGame() {
   $("#1-player-start").hide()
   let game = new Game()
   resetOnePlayerGame(game)
-  game.pictureCycler()
+  // game.pictureCycler()
+  var renderScores = game.pictureCycler()
+  renderScores.then(() => {
+    game.renderScores()
+  })
   restartGame()
 }
 
@@ -84,11 +88,10 @@ function restartGame() {
 }
 
   function resetOnePlayerGame(game){
-    if (game.counter) {
-       game.counter = 0 }
-    game.correct.length = 0
-    game.shown.length = 0
-    game.clicked.length = 0
+    game.correct.length = []
+    game.clicked.length = []
+    game.shown.length = []
+    game.counter ? game.counter = 0 : null
   }
 
   function resetTwoPlayerGame(game){
