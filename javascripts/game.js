@@ -5,7 +5,7 @@ class Game {
         this.clicked = []
         this.correct = []
         this.counter = 0
-        this.runs = 6
+        this.runs = 16
     }
 
     pictureCycler() {
