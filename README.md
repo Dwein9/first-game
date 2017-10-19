@@ -1,17 +1,11 @@
-# !! Roll Out !!
+# Roll Out
+Welcome. Roll Out is a continuous performance game, based on the N-back exercise commonly used as an assessment in cognitive neuroscience that measures a part of working memory and working memory capacity. Implementation of current two player mode is limited. 
 
-- Hi
--  ^___^
-
-Roll Out is a continuous performance game, based on the N-back that is commonly used as an assessment in cognitive neuroscience to measure a part of working memory and working memory capacity.
-
-
-Built on:
-- Animate.css
-- Materialize.css
-- JavaScript
-
-Implementation of full 2 player capability pending, current 2 player capability limited. 
+## Built with
+* Animate.css
+* Materialize.css
+* JavaScript
+* jQuery
 
 <!-- Open Items
 
@@ -21,3 +15,10 @@ Implementation of full 2 player capability pending, current 2 player capability 
   2P
 
 -->
+
+
+## Getting Started
+Clone the project and open the `index.html` file. 
+
+## Created by
+* **Yomi Lajide** - (https://github.com/Joll59) and **David Weinstein** - (https://github.com/dwein9)
