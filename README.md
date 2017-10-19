@@ -16,9 +16,8 @@ Welcome. Roll Out is a continuous performance game, based on the N-back exercise
 
 -->
 
-
 ## Getting Started
-Clone the project and open the `index.html` file. 
+Clone the project and open the `index.html` file. Or play here, https://dwein9.github.io/rollout/
 
 ## Created by
-* **Yomi Lajide** - (https://github.com/Joll59) and **David Weinstein** - (https://github.com/dwein9)
+* **Yomi Lajide** - https://github.com/Joll59 and **David Weinstein** - https://github.com/dwein9
